@@ -22,7 +22,8 @@ public class Main {
      */
     public static void moveTo(Person person, Position destination) {
         // TODO
-        new Car(person.getPosition()).go(destination);
+        Car car = new Car(person);
+        car.go(destination);
         if (person.getPosition() != destination)
             person.walk(destination);
         assert person.getPosition() == destination;

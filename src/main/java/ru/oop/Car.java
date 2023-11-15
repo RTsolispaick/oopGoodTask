@@ -1,7 +1,10 @@
 package ru.oop;
 
 public class Car {
-    public Car(Position currentPosition) {
+    /**
+     * Помещаем человека в машину
+     */
+    public Car(Person person) {
         //TODO
     }
 
