@@ -1,5 +1,9 @@
 package ru.oop;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * <b>Задача 2:</b><br>
  * Добраться человеку до заданного места.<br>
@@ -38,7 +42,18 @@ public class Main {
      * на любом, заранее определённом транспорте
      */
     public static void moveTo(Person person, Position destination) {
-        // TODO
+        List<Transport> unknownTransports = Arrays.asList(new Car(person), new Bus("43", person));
+
+        for(int i = 0; i < unknownTransports.size() - 1; i++) {
+           if (unknownTransports.get(i).getPosition() != person.getPosition())
+               person.walk(unknownTransports.get(i).getPosition());
+            unknownTransports.get(i).go(unknownTransports.get(i + 1).getPosition());
+        };
+
+        unknownTransports.get(unknownTransports.size() - 1).go(destination);
+        if (person.getPosition() != destination)
+            person.walk(destination);
+
         assert person.getPosition() == destination;
     }
 }
