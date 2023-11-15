@@ -38,7 +38,18 @@ public class Main {
      * на любом, заранее определённом транспорте
      */
     public static void moveTo(Person person, Position destination) {
-        // TODO
+        Transport unknownTransport = new SpecificTransport();
+
+        if (person.getPosition() != unknownTransport.getPosition())
+            person.walk(unknownTransport.getPosition());
+
+        unknownTransport = new SpecificTransport(person);
+
+        unknownTransport.go(destination);
+
+        if (person.getPosition() != destination)
+            person.walk(destination);
+
         assert person.getPosition() == destination;
     }
 }
