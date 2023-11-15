@@ -38,12 +38,10 @@ public class Main {
      * на любом, заранее определённом транспорте
      */
     public static void moveTo(Person person, Position destination) {
-        Transport unknownTransport = new SpecificTransport();
+        Transport unknownTransport = new SpecificTransport(person);
 
         if (person.getPosition() != unknownTransport.getPosition())
             person.walk(unknownTransport.getPosition());
-
-        unknownTransport = new SpecificTransport(person);
 
         unknownTransport.go(destination);
 

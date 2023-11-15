@@ -1,16 +1,8 @@
 package ru.oop;
 
 public class SpecificTransport implements Transport {
-
     /**
-     * Находим местоположение определённого транспорта
-     */
-    public SpecificTransport() {
-        //TODO
-    }
-
-    /**
-     * Помещаем человека в определённый транспорт
+     * Ищем ближайший транспорт к человеку
      */
     public SpecificTransport(Person person) {
         //TODO
